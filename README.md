@@ -102,6 +102,27 @@ Angular Intro
             }
         }
 
+    Lab Setup
+
+        VS Code             IDE                     latest
+        NodeJS              Dev.Platform            14 >                                            node --version
+        Angular CLI         Project Tool Facet      13 >    npm install -g @angular/cli@13.3.3      ng version
+
+    What is Node?
+        NodeJS is a javascript runtime alternate to a browser.
+
+    Why is NodeJS?
+
+        1. Compose the code                     IDE             VSCode
+        2. Compile the code (.ts into .js)      transpeller     babel
+        3. build the bundele (dependencies)     build tool      npm
+        4. pack the bundle                      packaging tool  webpack
+        5. run test cases                       testing lib     jasmine and karma
+
+        all these tools like babel, npm, webpack, jasmine are expected to execute on the developer machine.
+        and all of thee tools are javascript based. Hence we need NodeJS on the developer machine to execute these tools.
+
+
 Angular Archetecture
 -----------------------------------------------------------------------
 
