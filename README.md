@@ -115,18 +115,158 @@ Angular Intro
 
         1. Compose the code                     IDE             VSCode
         2. Compile the code (.ts into .js)      transpeller     babel
-        3. build the bundele (dependencies)     build tool      npm
+        3. build the bundle (dependencies)      build tool      npm
         4. pack the bundle                      packaging tool  webpack
         5. run test cases                       testing lib     jasmine and karma
 
         all these tools like babel, npm, webpack, jasmine are expected to execute on the developer machine.
         and all of thee tools are javascript based. Hence we need NodeJS on the developer machine to execute these tools.
 
+    Angular CLI
+
+        it is frontier of npm tool adn other build scripts to create and manage the project structure and is used
+        to invoke the testing, executing or building of our application.
+
+        ng new proj-name
+
+        cd proj-name
+
+        proj-name \>    ng generate module ModuleName
+        proj-name \>    ng generate directive DirectiveName --skip-tests
+        proj-name \>    ng generate component ComponentName --skip-tests
+        proj-name \>    ng generate pipe PipeName --skip-tests
+        proj-name \>    ng generate service ServiceName --skip-tests
+        proj-name \>    ng generate class ClassName --skip-tests
+        proj-name \>    ng generate interface InterfaceName
+
+        'generate' can be short-cut to 'g'
+        'component' can be short-cut to 'c'
+
+        proj-name \>    ng serve --port 8999 -o
+        proj-name \>    ng build
+        proj-name \>    ng test
+
 
 Angular Archetecture
 -----------------------------------------------------------------------
 
+    an angular project comprises of variaty of resources like :
+
+        Modules
+        Directives
+        Components
+        Pipes
+        Services
+
+    each of these resources is a typescript class.
+    these class are marked with decorators to specify their role.
+    these decorators are also supplied with a json-object called meta-data that
+    encapsulates the configuration of each resource.
+
+    Module
+            @NgModule({
+                declarations:[],
+                imports:[],
+                exports:[],
+                providers:[],
+                bootstrap:[]
+            })
+            class SalesModule {
+
+            }
+
+            An angular module is different from a JS module.
+            Each JS file is a is a JS module. 
+            Each angular module is a class. The anulgar module are a logical group of single unit of
+            load. an Angular module will group components, directives, pipes and services as a unit.
+            An angular module can have sub-modules as well.
+
+            Each angular project must be inside a top-level module and is called 'ROOT-MODULE'
+            and the sub-module are called 'FEATURE-MODULES'
+
+            declarations    will hold the list of components,directives,pipes that
+                            are grouped under the current module
+
+            imports         will hold the list of sub-modules needed in the current module     
+
+            exports         will hold the list of components,directives,pipes that
+                            are grouped under the current module and are allowed 
+                            to be accessed outside the current module.
+
+                            'exports' is absent for 'ROOT-MODULE'
+
+            providers       will hold the list of servcies of the current module.
+
+            bootstrap       is a meta-data property allowed only for top-level modules,
+                            and will have the component that has to be instatiated immediatly 
+                            after the module is loaded.
+            
+
+    Directive
+
+            Angular allows extandability on html - that one can create our own html elements (tags) and attributes.
+
+            Component Directives / Components
+
+                @Component({
+                    selector:'',
+                    templateUrl:''
+                })
+                class ShoppingCartComponent {
+
+                }
+
+                Each component is a html element (tag).
+
+                selector    is the name of the tag
+
+                Component = Component Class + Component Template + Component Style Sheets
+                    Component Class holds the state (data) and behaviour (method for event-handling)
+                    Component Template provide the html DOM for that compenent.
+                    Component Style Sheets provide local styling...
+
+                Data Binding
+
+                    is about accessing the fields and methods of componenet class in
+                    the component template.
+
+                    Interpolation
+                        is rendering the value of an angular expression into the
+                        content of a html element.
+
+                        {{angular-expression}}
+
+                        as and when the fields in the expression have their valeus changed,
+                        the expression is autoamtically re-evaluated and updated on the screen.
+                        
+                    Two-Way Data Binding
+                    One-Way Data Binding
+
+            Structural Directives
+            Attribute Directives
+                @Direcitve({
+                    selector:''
+                })
+                class FastMovingStockDirective {
+
+                }
+            
 
 
 
-                                                     
+
+    Pipe
+            @Pipe({
+                name:''
+            })
+            class HighLighter {
+
+            }
+
+    Service
+            @Injectable({
+                providedIn:'root'
+            })
+            class SalesService {
+
+            }
