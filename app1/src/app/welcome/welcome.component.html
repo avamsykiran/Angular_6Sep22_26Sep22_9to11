@@ -1,3 +1,26 @@
 <section class="welcome">
     <p>Hai {{userName}}! we are happy to see you here!</p>
+
+    <div>
+        <form>
+            <div>
+                <label>User Name: <input type="text" name="unm" [(ngModel)]="userName" /> </label>
+            </div>
+            <div>
+                <label>
+                    Image Width: <input type="range" name="iw" [(ngModel)]="logoWidth" min="20" max="500" />
+                    {{logoWidth}} px.
+                </label>
+            </div>
+            <div>
+                <label><input type="checkbox" name="ch1" [(ngModel)]="isCenterOn" />Centered </label>
+                <label><input type="checkbox" name="ch2" [(ngModel)]="isBorderOn" />Bordered </label>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <img [src]="logos[logoIndex]" (click)="toggle()" [style.width.px]="logoWidth" [class.center]="isCenterOn"
+            [class.border]="isBorderOn" />
+    </div>
 </section>

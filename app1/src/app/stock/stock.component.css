@@ -1,0 +1,22 @@
+.stocks{
+    background-color: #bcbcbc;
+}
+
+.stocks>div{
+    margin:5px;
+}
+
+.stocks>table{
+    width: 80%;
+    margin: 5px;
+    border: 1px solid #000000;
+}
+
+.stocks>table tr>th,.stocks>table tr>td{
+    border-bottom: .5px dashed #000000;
+}
+
+.stocks>table tr:last-child>td{
+    border: 0px;
+}
+

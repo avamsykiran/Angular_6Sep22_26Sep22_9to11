@@ -236,13 +236,44 @@ Angular Archetecture
 
                         {{angular-expression}}
 
-                        as and when the fields in the expression have their valeus changed,
+                        as and when the fields in the expression have their values changed,
                         the expression is autoamtically re-evaluated and updated on the screen.
                         
                     Two-Way Data Binding
+                        is to bind a field with a form-element.
+
+                        'ngModel' is an attribute directive form 'FormsModule'
+                        'FormsModule' from '@angular/forms'
+
+                        <input [(ngModel)]="field" />
+
                     One-Way Data Binding
 
+                        is to bind of fields to the attributes of the elements
+                        in the template.
+
+                        attributes      <tag [attribute]="field" ></tag>
+                        styles          <tag [style.cssProperty]="field" ></tag>
+                        css classes     <tag [class.className]="booleanField" ></tag>
+                        events          <tag (eventDirective)="method()" ></tag>
+
+                                html event attribute        event directive
+                                    onSubmit                    ngSubmit
+                                    onClick                     click
+                                    onFocus                     focus
+                                    onBlur                      blur
+                                    onChange                    change
+                                    onMouseOver                 mouseover
+                                    ......etc
+
             Structural Directives
+
+                are in-built directives to control the elements structure.
+
+                *ngIf
+                *ngFor
+                ngSwitch    *ngCase *ngDefault
+
             Attribute Directives
                 @Direcitve({
                     selector:''
@@ -250,10 +281,6 @@ Angular Archetecture
                 class FastMovingStockDirective {
 
                 }
-            
-
-
-
 
     Pipe
             @Pipe({

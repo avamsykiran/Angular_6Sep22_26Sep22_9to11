@@ -1,3 +1,17 @@
 .welcome{
     background-color: #fcfcfc;
 }
+
+.welcome>div{
+    margin-top: 4px;
+}
+
+.center{
+    display: block;
+    margin: auto;
+}
+
+.border{
+    border: 2px solid #000000;
+    border-radius: 15px;
+}

@@ -1,0 +1,29 @@
+<section class="stocks">
+    <h4>Inventory</h4>
+
+    <div *ngIf="!stocks || stocks.length===0">
+        <p><strong>No items found in the inventory.</strong></p>
+    </div>
+
+    <table *ngIf="stocks && stocks.length>0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>In Stock</th>
+                <th>Out Stock</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of stocks">
+                <td>{{s.id}}</td>
+                <td>{{s.name}}</td>
+                <td>{{s.quantityInHand}}</td>
+                <td>{{s.quantitySold}}</td>
+                <td>{{s.quantityInHand - s.quantitySold}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
