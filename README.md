@@ -275,6 +275,9 @@ Angular Archetecture
                 ngSwitch    *ngCase *ngDefault
 
             Attribute Directives
+                
+                are directives that work like attributes on a tag.
+
                 @Direcitve({
                     selector:''
                 })
@@ -283,6 +286,16 @@ Angular Archetecture
                 }
 
     Pipe
+
+            is used to tranform a given value into another value just before rendering.
+
+                lowercase
+                uppercase
+                titlecase
+                number
+                date
+                currency
+
             @Pipe({
                 name:''
             })

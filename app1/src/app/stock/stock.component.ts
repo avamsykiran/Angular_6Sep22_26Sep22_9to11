@@ -9,6 +9,7 @@ import { Stock } from '../models/stock';
 export class StockComponent implements OnInit {
 
   stocks:Stock[];
+  stock:Stock;
 
   constructor() {
     this.stocks=[
@@ -16,13 +17,16 @@ export class StockComponent implements OnInit {
       {id:2,name:"Rice Packet 5Kg",quantityInHand:400,quantitySold:50},
       {id:3,name:"Rice Packet 1Kg",quantityInHand:400,quantitySold:200}
     ];
+
+    this.stock = {id:0,name:'',quantityInHand:0,quantitySold:0};
   }
 
   ngOnInit(): void {
   }
 
-  add(stock:Stock){
-    this.stocks.push(stock);
+  add(){
+    this.stocks.push(this.stock);
+    this.stock = {id:0,name:'',quantityInHand:0,quantitySold:0};
   }
 
   deleteById(stockId:number){

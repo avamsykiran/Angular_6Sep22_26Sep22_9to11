@@ -5,6 +5,28 @@
         <p><strong>No items found in the inventory.</strong></p>
     </div>
 
+    <form (ngSubmit)="add()">
+        <div>
+            <label>Stock Id</label>
+            <input type="number" name="sid" [(ngModel)]="stock.id" />
+        </div>
+        <div>
+            <label>Stock Name</label>
+            <input type="text" name="snm" [(ngModel)]="stock.name" />
+        </div>
+        <div>
+            <label>Quantity In Hand</label>
+            <input type="number" name="sqh" [(ngModel)]="stock.quantityInHand" />
+        </div>
+        <div>
+            <label>Quantity Sold</label>
+            <input type="number" name="sqs" [(ngModel)]="stock.quantitySold" />
+        </div>
+        <div>
+            <button>ADD</button>
+        </div>
+    </form>
+
     <table *ngIf="stocks && stocks.length>0">
         <thead>
             <tr>
@@ -13,15 +35,20 @@
                 <th>In Stock</th>
                 <th>Out Stock</th>
                 <th>Balance</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
+       
             <tr *ngFor="let s of stocks">
                 <td>{{s.id}}</td>
                 <td>{{s.name}}</td>
                 <td>{{s.quantityInHand}}</td>
                 <td>{{s.quantitySold}}</td>
                 <td>{{s.quantityInHand - s.quantitySold}}</td>
+                <td>
+                    <button (click)="deleteById(s.id)">DELETE</button>
+                </td>
             </tr>
         </tbody>
     </table>
