@@ -1,0 +1,40 @@
+<h4>Tasks </h4>
+
+<div class="col-sm-9 mx-auto p-2">
+    <div class="row fw-bold border-bottom border-primary p-1 text-center">
+        <div class="col-2">
+            Task Id
+        </div>
+        <div class="col">
+            Task Description
+        </div>
+        <div class="col-2">
+            Status
+        </div>
+        <div class="col-2">
+            
+        </div>
+    </div>
+    <div *ngIf="!tasks || tasks.length===0" class="row">
+        <div class="col alert alert-info">
+            No Records Found
+        </div>
+    </div>
+    <div *ngIf="tasks && tasks.length>0">
+        <div class="row border-bottom p-1" *ngFor="let t of tasks">
+            <div class="col-2 text-end">
+                {{t.id}}
+            </div>
+            <div class="col">
+                {{t.desp}}
+            </div>
+            <div class="col-2">
+                {{t.isComplete?"DONE":"PLANNED"}}
+            </div>
+            <div class="col-2">
+                <button class="btn btn-sm btn-danger" (click)="delete(t.id)">DELETE</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

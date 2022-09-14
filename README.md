@@ -310,3 +310,19 @@ Angular Archetecture
             class SalesService {
 
             }
+
+            is a class that offers bussiness logic, caliculatons/ validations/
+            rest api communciation, state management.
+
+Bootstrap Integration
+----------------------------------------------------------------------
+
+    npm install bootstrap --save
+
+    node_modules/bootstrap/dist/css/bootstrap.min.css
+    node_modules/bootstrap/dist/js/bootstrap.js
+
+    incldue those files in 'scripts' and 'styles' section of angular.json
+
+Component Decomposition
+------------------------------------------------------------------------
