@@ -1,0 +1,17 @@
+<form (ngSubmit)="save()">
+    <div class="row border-bottom p-1">
+        <div class="col-2">
+            <input type="number" class="form-control" name="tid" [(ngModel)]="task.id"/>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="tdesp" [(ngModel)]="task.desp"/>
+        </div>
+        <div class="col-2 text-center">
+            <input type="checkbox" name="tstatus" [(ngModel)]="task.isComplete"/>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-sm btn-primary">ADD</button>
+            <button type="button" class="btn btn-sm btn-danger" (click)="reset()">CLEAR</button>
+        </div>
+    </div>
+</form>

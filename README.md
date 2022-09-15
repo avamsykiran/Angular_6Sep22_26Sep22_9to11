@@ -326,3 +326,19 @@ Bootstrap Integration
 
 Component Decomposition
 ------------------------------------------------------------------------
+
+    Breaking a single component into smaller multiple components. This
+    often results in Parent-Child components.
+
+        1. Parent component has to share data with child components.
+
+            this is possible through attributes. @Input decorator
+            is used to mark a field as an attribute.
+
+
+        2. Child component may have to fire events that a Parent component should handle.
+
+            a child component can raise en event thorugh EventEmitter.
+            these EventEmiter's are exposed @Output decorator.
+
+    
