@@ -30,4 +30,21 @@ export class TaskMasterComponent implements OnInit {
     this.taskService.add(task);
     this.loadData();
   }
+
+  markEditable(id:number){
+    let index = this.tasks.findIndex(t => t.id===id);
+    this.tasks[index].isEditable=true;
+  }
+  
+  unMarkEditable(id:number){
+    let index = this.tasks.findIndex(t => t.id===id);
+    this.tasks[index].isEditable=undefined;
+  }
+
+  update(task:Task){
+    task.isEditable=undefined;
+    this.taskService.update(task);
+    this.loadData();
+  }
+
 }

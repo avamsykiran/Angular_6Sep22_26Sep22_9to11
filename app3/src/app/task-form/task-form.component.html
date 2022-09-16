@@ -10,8 +10,8 @@
             <input type="checkbox" name="tstatus" [(ngModel)]="task.isComplete"/>
         </div>
         <div class="col-2">
-            <button class="btn btn-sm btn-primary">ADD</button>
-            <button type="button" class="btn btn-sm btn-danger" (click)="reset()">CLEAR</button>
+            <button class="btn btn-sm btn-primary">{{task.isEditable?"SAVE":"ADD"}}</button>
+            <button type="button" class="btn btn-sm btn-danger" (click)="reset()">{{task.isEditable?"CANCEL":"CLEAR"}}</button>
         </div>
     </div>
 </form>

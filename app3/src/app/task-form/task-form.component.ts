@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output, Input } from '@angular/core';
 import { Task } from '../models/task';
 
 @Component({
@@ -8,14 +8,19 @@ import { Task } from '../models/task';
 })
 export class TaskFormComponent implements OnInit {
 
+  @Input()
   task:Task;
 
   @Output()
   saveBtnClick:EventEmitter<Task>;
 
+  @Output()
+  resetBtnClick:EventEmitter<number>;
+
   constructor() {
     this.task={id:0,desp:'',isComplete:false};
     this.saveBtnClick=new EventEmitter<Task>();
+    this.resetBtnClick=new EventEmitter<number>();
   }
 
   ngOnInit(): void {
@@ -23,10 +28,16 @@ export class TaskFormComponent implements OnInit {
 
   save(){
     this.saveBtnClick.emit(this.task);
-    this.task={id:0,desp:'',isComplete:false};
+    if(!this.task.isEditable) {
+      this.task={id:0,desp:'',isComplete:false};
+    }
   }
 
   reset(){
-    this.task={id:0,desp:'',isComplete:false};
+    if(!this.task.isEditable) {
+      this.task={id:0,desp:'',isComplete:false};
+    }else{
+      this.resetBtnClick.emit(this.task.id);
+    }
   }
 }

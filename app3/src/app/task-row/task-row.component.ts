@@ -14,8 +14,12 @@ export class TaskRowComponent implements OnInit {
   @Output()
   deleteBtnClick:EventEmitter<number>;
 
+  @Output()
+  editBtnClick:EventEmitter<number>;
+
   constructor() {
     this.deleteBtnClick = new EventEmitter<number>();
+    this.editBtnClick = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
@@ -23,5 +27,9 @@ export class TaskRowComponent implements OnInit {
 
   delete(){
     this.deleteBtnClick.emit(this.t.id);
+  }
+
+  edit(){
+    this.editBtnClick.emit(this.t.id);
   }
 }
