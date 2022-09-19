@@ -341,4 +341,30 @@ Component Decomposition
             a child component can raise en event thorugh EventEmitter.
             these EventEmiter's are exposed @Output decorator.
 
-    
+Routing
+-----------------------------------------------------------------------------
+
+    we can map components to paths, so that that component 
+    is rendered only when the mapped path matches in the URL.
+
+    'RouterModule' from '@angular/router'.
+
+        Route               {
+                                path:'',
+                                pathMatch:'startsWith|full',
+                                component:'',
+                                redirect:'',
+                                children:[]
+                            }
+
+        Routes              Route[]
+
+        forRoot             used to register the paths with the RouterModules.
+
+        router-outlet       is a in-built component sued to reserve place for
+                            the output component of the routing   
+
+        routerLink          is an in-built attribute directive for 'a' tags. used instead of 'href'.
+        routerLinkActive    is an in-built attribute directive for 'a' tags. used instead to hold
+                            any css-class that you may want to apply on active links.
+
