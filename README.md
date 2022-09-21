@@ -368,3 +368,42 @@ Routing
         routerLinkActive    is an in-built attribute directive for 'a' tags. used instead to hold
                             any css-class that you may want to apply on active links.
 
+Assignemnt
+---------------------------------------------------------------------------
+
+    To create a model Employee:
+        id:number
+        firstName:string
+        lastName:string
+        mailId:string
+        salary:number
+
+    and develop an angular SPA to perform CRUD operations on it.
+        C- CREATE
+        R- RERIVe
+        U- UPDATE
+        D- DELETE
+
+Observables
+-----------------------------------------------------------------------
+
+    Observable is a class from 'rxjs' library.
+    RxJS - Reactive JavaScript is an indipendent library but is avaialble
+    on the angualr project by default. (Is not ReactJS)
+
+    const backgroundJob = (observer:Observer) => {
+        
+        observer.next(data); //used to emit valeus from the background job.....
+        observer.error(err); //used to emit error if any from the background job.....
+        observer.complete(); //used to indicate that the job is done.
+
+    }
+
+    let ob = new Observable(backgroundJob);
+
+
+    ob.subscribe({
+        next:   data => { },
+        error:  err => { },
+        complete: () => { }
+    });

@@ -8,11 +8,14 @@ import { TaskMasterComponent } from './task-master/task-master.component';
 import { TaskRowComponent } from './task-row/task-row.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { HomeComponent } from './home/home.component';
+import { NumberSeriesComponent } from './number-series/number-series.component';
+import { NumberSeriesGroupComponent } from './number-series-group/number-series-group.component';
 
 const routes :Routes =[
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'home',component:HomeComponent},
-  {path:'tasks',component:TaskMasterComponent}
+  {path:'tasks',component:TaskMasterComponent},
+  {path:'nss',component:NumberSeriesGroupComponent}
 ];
 
 @NgModule({
@@ -21,7 +24,9 @@ const routes :Routes =[
     TaskMasterComponent,
     TaskRowComponent,
     TaskFormComponent,
-    HomeComponent
+    HomeComponent,
+    NumberSeriesComponent,
+    NumberSeriesGroupComponent
   ],
   imports: [
     BrowserModule,
