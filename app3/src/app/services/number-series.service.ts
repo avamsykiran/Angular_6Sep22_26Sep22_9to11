@@ -8,25 +8,25 @@ export class NumberSeriesService {
 
   constructor() { }
 
-  generateSeries(lb:number,ub:number) : Observable<number>{
-    
-    const bgJob = (observer:Observer<number>) => {
+  generateSeries(lb: number, ub: number): Observable<number> {
 
-      if(ub<lb){
+    const bgJob = (observer: Observer<number>) => {
+
+      if (ub < lb) {
         observer.error("Invalid boundaries to start the series");
         return;
       }
 
       let n = lb;
 
-      let handle = setInterval(()=>{
+      let handle = setInterval(() => {
         observer.next(n);
         n++;
-        if(n>ub){
+        if (n > ub) {
           clearInterval(handle);
           observer.complete();
         }
-      },500);
+      }, 500);
     };
 
     return new Observable(bgJob);

@@ -1,1 +1,21 @@
-<p>number-series works!</p>
+<form (ngSubmit)="start()" class="alert alert-primary m-2 p-2">
+    <div>
+        <label>Lower Bound</label>
+        <input type="number" class="form-control" name="tb1" [(ngModel)]="lb" />
+    </div>
+    <div>
+        <label>Upper Bound</label>
+        <input type="number" class="form-control" name="tb2" [(ngModel)]="ub" />
+    </div>
+    <div class="text-end mt-2">
+        <button class="btn btn-sm btn-primary" [disabled]="!isJobDone">GENERATE</button>
+    </div>
+</form>
+
+<div *ngIf="results && results.length>0" class="alert alert-info m-2 p-2">
+    <span *ngFor="let x of results">{{x}} </span>
+</div>
+
+<div *ngIf="errMsg" class="alert alert-danger m-2 p-2">
+    <strong>{{errMsg}}</strong>
+</div>
