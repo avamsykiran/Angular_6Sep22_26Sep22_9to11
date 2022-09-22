@@ -401,9 +401,31 @@ Observables
 
     let ob = new Observable(backgroundJob);
 
-
     ob.subscribe({
         next:   data => { },
         error:  err => { },
         complete: () => { }
     });
+
+HttpClient
+--------------------------------------------------------------------------
+
+    HttpClient is a service from 'HttpClientModule'
+
+        get(url) : Observable
+        post(url,reqBody) : Observable
+        put(url,reqBody):Observable
+        delete(url) : Observable
+
+json-server
+--------------------------------------------------------------------------
+
+    is a javascript library that generates fake rest end points to
+    act as a simulating rest api on a given .json file. The .json file
+    serves as a repository of data.
+
+    npm install json-server --save
+
+    json-server --watch data.json --port 8787
+
+    

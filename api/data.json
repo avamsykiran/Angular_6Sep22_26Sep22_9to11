@@ -1,0 +1,56 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "name": "Vamsy Kiran",
+      "mobile": "9052224753"
+    },
+    {
+      "id": 2,
+      "name": "Srinu Dachepalli",
+      "mobile": "9948016004"
+    }
+  ],
+  "txns": [
+    {
+      "id": 1,
+      "ledger": "Salary",
+      "type": "CREDIT",
+      "amount": 76000,
+      "txnDate": "2022-09-01",
+      "aId": 1
+    },
+    {
+      "id": 2,
+      "ledger": "Rent",
+      "type": "DEBIT",
+      "amount": 6000,
+      "txnDate": "2022-09-02",
+      "aId": 1
+    },
+    {
+      "id": 3,
+      "ledger": "Salary",
+      "type": "CREDIT",
+      "amount": 86000,
+      "txnDate": "2022-09-01",
+      "aId": 2
+    },
+    {
+      "id": 4,
+      "ledger": "Rent",
+      "type": "DEBIT",
+      "amount": 6000,
+      "txnDate": "2022-09-02",
+      "aId": 2
+    },
+    {
+      "ledger": "Birthday Party",
+      "type": "CREDIT",
+      "amount": 10000,
+      "txnDate": "2022-09-10",
+      "aId": 1,
+      "id": 5
+    }
+  ]
+}
