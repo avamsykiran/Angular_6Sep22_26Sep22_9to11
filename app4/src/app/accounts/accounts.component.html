@@ -1,1 +1,36 @@
-<p>accounts works!</p>
+<h4>Accounts</h4>
+
+<div *ngIf="!accounts && !errMsg" class="alert alert-info p-4">
+    <strong>Please wait while loading data...</strong>
+</div>
+
+<div *ngIf="errMsg" class="alert alert-danger p-4">
+    <strong>{{errMsg}}</strong>
+</div>
+
+<div *ngIf="accounts && accounts.length==0" class="alert alert-info p-4">
+    <strong>No records to display</strong>
+</div>
+
+<table *ngIf="accounts && accounts.length>0" class="table table-border table-striped">
+    <thead>
+        <tr>
+            <th>Account#</th>
+            <th>Full Name</th>
+            <th>Mobile</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of accounts">
+            <td>{{a.id}}</td>
+            <td>{{a.name}}</td>
+            <td>{{a.mobile}}</td>
+            <td>
+                <a class="btn btn-sm btn-primary me-1" [routerLink]="['/edit',a.id]">EDIT</a>
+                <a class="btn btn-sm btn-secondary me-1" [routerLink]="['/txns',a.id]">STATEMENT</a>
+                <button type="button" class="btn btn-sm btn-danger" (click)="delete(a.id)">DELETE</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

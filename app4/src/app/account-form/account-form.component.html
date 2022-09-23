@@ -1,1 +1,21 @@
-<p>account-form works!</p>
+<div class="col-6 m-4 p-4 mx-auto">
+    <h5>{{isEditing?"Edit":"New"}} Account</h5>
+
+    <form (ngSubmit)="save()">
+        <div>
+            <label>Account Id</label>
+            <input type="number" name="aid" [(ngModel)]="account.id" class="form-control" readonly />
+        </div>
+        <div>
+            <label>Name:</label>
+            <input type="text" name="nm" [(ngModel)]="account.name" class="form-control" />
+        </div>
+        <div>
+            <label>Mobile</label>
+            <input type="text" name="mob" [(ngModel)]="account.mobile" class="form-control" />
+        </div>
+        <div class="d-grid mt-1">
+            <button class="btn btn-primary">SAVE</button>
+        </div>
+    </form>
+</div>
