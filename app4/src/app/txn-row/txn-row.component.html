@@ -1,1 +1,21 @@
-<p>txn-row works!</p>
+<div class="row border-bottom p-1" >
+    <div class="col-2 text-end">
+        {{t.id}}
+    </div>
+    <div class="col-2">
+        {{t.txnDate}}
+    </div>
+    <div class="col">
+        {{t.ledger}}
+    </div>
+    <div class="col-2">
+        {{t.type==="CREDIT"?t.amount:""}}
+    </div>
+    <div class="col-2">
+        {{t.type==="DEBIT"?t.amount:""}}
+    </div>
+    <div class="col-2">
+        <button class="btn btn-sm btn-primary" (click)="edit()">EDIT</button>
+        <button class="btn btn-sm btn-danger" (click)="delete()">DELETE</button>
+    </div>
+</div>

@@ -1,1 +1,23 @@
-<p>txn-form works!</p>
+<form (ngSubmit)="save()">
+    <div class="row border-bottom p-1">
+        <div class="col-2">
+            {{txn.id}}
+        </div>
+        <div class="col-2">
+            <input type="date" class="form-control" name="tdt" [(ngModel)]="txn.txnDate"/>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="tdesp" [(ngModel)]="txn.ledger"/>
+        </div>
+        <div class="col-2" (click)="chagneTxnType('CREDIT')">
+            <input type="number" class="form-control" name="tamt" [(ngModel)]="txn.amount" *ngIf="txn.type==='CREDIT'"/>
+        </div>
+        <div class="col-2" (click)="chagneTxnType('DEBIT')">
+            <input type="number" class="form-control" name="tamt" [(ngModel)]="txn.amount" *ngIf="txn.type==='DEBIT'"/>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-sm btn-primary">{{txn.isEditable?"SAVE":"ADD"}}</button>
+            <button type="button" class="btn btn-sm btn-danger" (click)="reset()">{{txn.isEditable?"CANCEL":"CLEAR"}}</button>
+        </div>
+    </div>
+</form>

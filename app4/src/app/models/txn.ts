@@ -3,6 +3,8 @@ export interface Txn {
     ledger:string;
     type:string;
     amount:number;
-    txnDate:Date;
-    aId:number;
+    txnDate:string;
+    aId?:number;
+    isEditable?:boolean;
 }
+
